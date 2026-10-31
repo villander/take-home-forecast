@@ -1,0 +1,10 @@
+{
+  "current_units": { "temperature_2m": "°F" },
+  "current": { "time": "2026-10-31T15:00", "temperature_2m": 61.7, "weather_code": 2 },
+  "daily": {
+    "time": ["2026-10-31", "2026-11-01", "2026-11-02"],
+    "weather_code": [2, 61, 0],
+    "temperature_2m_max": [64.4, 58.1, 60.0],
+    "temperature_2m_min": [47.3, 45.9, 41.2]
+  }
+}
