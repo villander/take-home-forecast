@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Weather Forecast" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag :app %>
+  </head>
+
+  <body>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

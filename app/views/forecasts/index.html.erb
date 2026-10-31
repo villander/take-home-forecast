@@ -1,0 +1,46 @@
+<h1>Weather Forecast</h1>
+
+<%= form_with url: root_path, method: :get, class: "search" do |f| %>
+  <%= f.label :address, "Address", class: "visually-hidden" %>
+  <%= f.text_field :address, value: @address, placeholder: "e.g. 1600 Pennsylvania Ave NW, Washington, DC",
+                             required: true, maxlength: ForecastService::MAX_ADDRESS_LENGTH, autofocus: true %>
+  <%= f.submit "Get forecast", name: nil %>
+<% end %>
+
+<% if @error %>
+  <p class="error" role="alert"><%= @error %></p>
+<% end %>
+
+<% if @forecast %>
+  <section class="forecast">
+    <header>
+      <p class="location"><%= @forecast[:location] %> &middot; Zip <strong><%= @forecast[:zip] %></strong></p>
+      <% if @forecast[:cached] %>
+        <span class="badge cached" title="Served from cache">From cache &middot; fetched <%= time_ago_in_words(@forecast[:fetched_at]) %> ago</span>
+      <% else %>
+        <span class="badge live">Live</span>
+      <% end %>
+    </header>
+
+    <p class="current">
+      <span class="temperature"><%= @forecast[:current_temperature] %><%= @forecast[:units] %></span>
+      <span><%= @forecast[:current_description] %></span>
+    </p>
+    <p class="high-low">High <%= @forecast[:high] %><%= @forecast[:units] %> &middot; Low <%= @forecast[:low] %><%= @forecast[:units] %></p>
+
+    <table>
+      <caption>7-day forecast</caption>
+      <thead><tr><th>Day</th><th>Conditions</th><th>High</th><th>Low</th></tr></thead>
+      <tbody>
+        <% @forecast[:daily].each do |day| %>
+          <tr>
+            <td><%= day[:date].strftime("%a %b %-d") %></td>
+            <td><%= day[:description] %></td>
+            <td><%= day[:high] %><%= @forecast[:units] %></td>
+            <td><%= day[:low] %><%= @forecast[:units] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+<% end %>

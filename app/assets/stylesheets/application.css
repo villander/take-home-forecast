@@ -1,0 +1,20 @@
+body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #1d1f23; }
+main { max-width: 640px; margin: 0 auto; padding: 2rem 1rem; }
+h1 { margin-top: 0; }
+.search { display: flex; gap: .5rem; }
+.search input[type=text] { flex: 1; padding: .6rem; font-size: 1rem; border: 1px solid #c4c8cf; border-radius: 6px; }
+.search input[type=submit] { padding: .6rem 1rem; font-size: 1rem; border: 0; border-radius: 6px; background: #2457c5; color: #fff; cursor: pointer; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.error { padding: .75rem; border-radius: 6px; background: #fde8e8; color: #9b1c1c; }
+.forecast { margin-top: 1.5rem; padding: 1.25rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgb(0 0 0 / .08); }
+.forecast header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.location { margin: 0; color: #555b66; font-size: .9rem; }
+.badge { white-space: nowrap; font-size: .8rem; padding: .2rem .5rem; border-radius: 999px; }
+.badge.cached { background: #fff4d6; color: #7a5200; }
+.badge.live { background: #dff5e3; color: #1d6b2f; }
+.current { display: flex; align-items: baseline; gap: .75rem; margin: 1rem 0 .25rem; }
+.temperature { font-size: 3rem; font-weight: 600; }
+.high-low { margin: 0 0 1rem; color: #555b66; }
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: left; font-weight: 600; padding-bottom: .5rem; }
+th, td { text-align: left; padding: .4rem .25rem; border-top: 1px solid #eceef1; }
