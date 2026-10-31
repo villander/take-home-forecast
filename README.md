@@ -4,6 +4,8 @@ Rails app that takes an address and shows the current temperature, today's high/
 
 Uses Nominatim (OpenStreetMap) to get the zip and coordinates for an address, and Open-Meteo for the weather. Neither needs an API key.
 
+![Screenshot](docs/screenshot.png)
+
 ## Running
 
 With Docker (app + Redis):
